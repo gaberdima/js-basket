@@ -1,0 +1,156 @@
+input:focus{
+	outline: none;
+}
+.first, .second, .third{
+	float: left;
+	margin-right: 20px;
+	border: 1px solid #000;
+	height: 350px;
+	width: 200px;
+	text-align: center;
+	background: #ccc;
+	margin-top: 30px;
+}
+.image{
+	height: 260px;
+}
+img{
+	height: 230px;
+	margin-top: 15px;
+}
+.article{
+	visibility: hidden;
+}
+.card-wrap{
+	border: 1px solid #000;
+	width: 1000px;
+	overflow: hidden;
+	display: none;
+	position: relative;
+}
+.card{
+	/*visibility: hidden;*/
+	/*display: none;*/
+	/*border: 1px solid #000;*/
+	/*margin-bottom: 15px;*/
+	min-width: 610px;
+	min-height: 210px;
+	height: 210px;
+	padding: 5px;
+	/*margin-top: 30px;*/
+	width: 500px;
+	float: left;
+}
+.reg{
+	width: 350px;
+	/*border: 1px solid #000;*/
+	float: right;
+	padding: 5px;
+}
+.vis{
+	/*visibility: visible;*/
+	display: block;
+}
+.close{
+	float: right;
+	cursor: pointer;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+.card-inner img{
+	width: 5%;
+	height: auto;
+}
+.card-inner .my-tovar{
+	margin-left: 50px;
+}
+.card-inner .my-tovar span:not(.minus){
+	margin-right: 30px;
+}
+.del{
+	cursor: pointer;
+	width: 50px;
+	display: inline-block;
+	font-family: arial;
+	color: #FF0000;
+	font-size: 16px;
+}
+.del:hover{
+	text-shadow: 0px 0px 15px #000;
+}
+.my-tovar span:not(.minus){
+	width: 50px;
+	display: inline-block;
+}
+.minus, .plus{
+	cursor: pointer;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+.num{
+	width: 20px;
+	text-align: center;
+}
+.price1{
+	visibility: hidden;
+}
+.my-tovar{
+	margin-bottom: 10px;
+}
+.reg input{
+	border: 1px solid #ccc;
+	width: 300px;
+	height: 30px;
+	font-size: 16px;
+	border-radius: 3px;
+}
+.reg input:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+/*.reg input:focus:invalid{
+	border-color: #FF0000;
+	box-shadow: 0 0 10px #FF0000;
+}
+.reg input:required:valid{
+	border-color: #00FF1E;
+	box-shadow: 0 0 10px #06FF00;
+}*/
+.reg input:focus{
+    outline-width: 0px;
+}
+.reg h2{
+	margin-top: -10px;
+}
+.reg p{
+	margin-bottom: 5px;
+}
+.reg button{
+	margin: 10px 10px 10px 0;
+	padding: 5px 10px;
+}
+.sum{
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+}
+.error{
+	border: 1px solid red !important;
+}
+body .card-wrap .reg .error-name{
+	width: 300px;
+	color: red;
+	display: block;
+}
+body .card-wrap .reg .error-phone{
+	width: 300px;
+	color: red;
+	display: block;
+}
+body .card-wrap .reg .error-email{
+	width: 300px;
+	color: red;
+	display: block;
+}
+.buyArticle, .buyPrice, .buyName, .buyNumber{
+	display: inline-block;
+}

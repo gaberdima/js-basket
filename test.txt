@@ -1,0 +1,1 @@
+{ "name1": "Вася", "password1":"123", "name2": "Петя", "password2":"456", "name3": "Саша", "password3":"789"}

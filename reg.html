@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="inputmask.js"></script>
+</head>
+<body>
+<form action="lk.html">
+	<input type="email" id="email" placeholder="email" required>
+	<input type="password" id="password" placeholder="password" required>
+	<input type="text" id="name" placeholder="name" required>
+	<input type="phone" id="tel" placeholder="+380(__)__-__-___" required>
+	<select name="city" id="city" required class="">
+		<option value="0" disabled selected="">Місто</option>
+		<option value="1">Львів</option>
+		<option value="2">Київ</option>
+		<option value="3">Одеса</option>
+	</select>
+	<input type="submit" value="Реєстрація" class="reg">
+</form>
+<script>
+	$("#tel").inputmask("+380(99)99-99-999");
+	$('.reg').click(function(){
+		var myEmail = $('#email').val();
+		console.log(myEmail);
+		if(myEmail == ''){
+			$('#email').addClass('error');
+		}
+		else{
+			$('#email').removeClass('error');
+			var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+			if(pattern.test($('#email').val())){
+				localStorage.setItem('email', myEmail);
+	              }
+	              else{
+	              	$('#email').addClass('error');
+	            	return false;
+             	 }
+		}
+	});
+	$('.reg').click(function(){
+		var myPassword = $('#password').val();
+		console.log(myPassword);
+		if(myPassword == ''){
+			$('#password').addClass('error');
+		}
+		else{
+			$('#password').removeClass('error');
+			var pattern = /^[a-z0-9_\.-]{4,30}$/i;
+			if(pattern.test($('#password').val())){
+				localStorage.setItem('password', myPassword);
+			}
+			else{
+				$('#password').addClass('error');
+				return false;
+			}
+		}
+	});
+	$('.reg').click(function(){
+		var myName = $('#name').val();
+		console.log(myName);
+		if(myName == ''){
+			$('#name').addClass('error');
+		}
+		else{
+			$('#name').removeClass('error');
+			var pattern = /^[a-zа-яё]{2,17}$/i;
+			if(pattern.test($('#name').val())){
+	              		localStorage.setItem('name', myName);
+			}
+			else{
+				$('#name').addClass('error');
+				return false;
+			}
+		}
+	});
+	$('.reg').click(function(){
+		var myPhone = $('#tel').val();
+		var numberPhone = myPhone.replace(/\D+/g,'').length;
+		if(numberPhone == 12){
+			$('#tel').removeClass('error');
+					localStorage.setItem('tel', myPhone);
+		}
+		else{
+			$('#tel').addClass('error');
+			return false;
+		}
+	});
+	$('.reg').click(function(){
+		var place = $('#city').val();
+		
+				localStorage.setItem('city', place);
+			
+	});
+		
+</script>
+
+
+	
+</body>
+</html>

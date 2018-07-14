@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	
+</head>
+<body>
+
+	<p class="name1"></p>
+	<p class="phone"></p>
+	<p class="email"></p>
+	<div class="tovars"></div>
+	<div class="all-sum"></div>
+
+	<script>
+	var myCook = document.cookie;
+		console.log(getCookie('saveName'), getCookie('saveEmail'), getCookie('savePhone1'));
+		$('.name1').html(getCookie('saveName'));
+		$('.phone').html(getCookie('saveEmail'));
+		$('.email').html(getCookie('savePhone1'));
+		$('.tovars').append(getCookie('coocMyTovar'));
+		$('.all-sum').append(getCookie('coocSum'));
+
+
+
+		function getCookie(name) {
+  var matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

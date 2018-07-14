@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="inputmask.js"></script>
+</head>
+<body>
+<div>Привет <span class="outs"></span>!</div>
+
+<button class="open-card">open</button>
+	<div class="card-wrap">
+			<button class="close" title="Закрити">X</button>
+		<div class="card">
+			<div class="card-inner"></div>
+		</div>
+		<div class="reg">
+			<h2>Введіть ваші дані</h2>
+			<form action="order.html">
+				<p>Прізвище, ім'я, по-батькові</p>
+				<input type="text" name="name" id="name" required="required" onblur="myBlurName()" pattern="[A-Za-zА-Яа-яЇїІіЁё ]{5,}">
+				<span class="error-name"></span>
+				<p>Телефон</p>
+				<input type="tel" name="tel" id="phone"  onblur="myBlurPhone()" placeholder="+380(__)__-__-___"   required="required">
+				<span class="error-phone"></span>
+				<p>Електронна пошта</p>
+				<input type="email" name="email" id="email" onblur="myBlurEmail()" required="required">
+				<span class="error-email"></span>
+				<input type="submit" value="Оформити замовлення" class="order" id="check">
+			</form>
+		</div>
+			<div class="sum">Сума покупок: <span class="all-sum"></span></div>
+	</div>
+
+
+	<div>
+		<div class="first">
+			<div class="image">
+				<img src="iphone-6SILVER.png" alt="">
+			</div>
+			<div class="price">500</div>
+			<div class="article">123456</div>
+			<div class="name">Iphone</div>
+			<button class="buy 123456">Купити</button>
+		</div>
+		<div class="second">
+			<div class="image">
+				<img src="galaxy-s6-edge_gallery_right-perspective_gold.png" alt="">
+			</div>
+			<div class="price">400</div>
+			<div class="article">56789</div>
+			<div class="name">Samsung</div>
+			<button class="buy 56789">Купити </button>
+		</div>
+		<div class="third">
+			<div class="image">
+				<img src="LG-G3-Vigor.png" alt="">
+			</div>
+			<div class="price">300</div>
+			<div class="article">654321</div>
+			<div class="name">LG</div>
+			<button class="buy 654321">Купити</button>
+		</div>
+	</div>
+
+	<input class="my-avtoris" type="text">
+	<input class="pass" type="password">
+	<input class="btn-ajax" type="submit" value="ajax">
+
+<script>
+	var loc = localStorage.getItem('user');
+	$('.outs').html(loc);
+	 // console.log(lok);
+</script>
+	<script src="script.js"></script>
+</body>
+</html>
